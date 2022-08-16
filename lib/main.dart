@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/A/page_a.dart';
+import 'package:flutter_application_1/router/my_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.green),
-      home: const APage(),
+      onUnknownRoute: (settings) => MyRouter.onUnknownError(settings),
+      onGenerateRoute: (settings) => MyRouter.onGenerateRoute(settings),
+      initialRoute: MyRouter.initialRoute,
     );
   }
 }

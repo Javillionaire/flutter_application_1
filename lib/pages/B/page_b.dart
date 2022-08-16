@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../C/page_c.dart';
-
 class BPage extends StatefulWidget {
   const BPage({super.key});
   @override
@@ -21,8 +19,7 @@ class _BPageState extends State<BPage> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: (() {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const CPage()));
+            Navigator.of(context).pushNamed('/c');
           }),
           child: const Text('B'),
         ));
